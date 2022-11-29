@@ -77,7 +77,6 @@ KUBERNETES_PUBLIC_ADDRESS=$(aws elbv2 describe-load-balancers \
   --load-balancer-arns ${LOAD_BALANCER_ARN} \
   --output text --query 'LoadBalancers[].DNSName')
 ```
-====================
 
 # COMPUTE INSTANCES
 
@@ -135,3 +134,4 @@ for i in 0 1 2; do
   aws ec2 create-tags --resources ${instance_id} --tags "Key=Name,Value=worker-${i}"
   echo "worker-${i} created"
 done
+```
